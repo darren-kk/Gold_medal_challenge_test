@@ -47,10 +47,20 @@ main {
   height: 415px;
 }
 
-.main_img_box, .imgs_box_unclicked, .imgs_box_clicked {
+.main_img_box, .imgs_box_unclicked, .imgs_box_clicked, .img_box_lose, .img_box_win  {
   position: absolute;
   width: auto;
   height: auto;
+}
+
+.img_lose, .img_win {
+  display: none;
+  width: 415px;
+  height: 415px;
+}
+
+.img_lose {
+  z-index: 4;
 }
 
 .main_img_box {
