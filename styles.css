@@ -73,7 +73,7 @@ main {
 }
 
 footer {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   margin : 30px auto;
