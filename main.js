@@ -18,7 +18,7 @@ const randomImgsArray = [];
 let flippedArray = [];
 let unflippedArray = [];
 let sec = 25;
-let goal = 8;
+let goal = 1;
 let intervalId = undefined;
 let count = 0;
 
@@ -34,6 +34,7 @@ const handleStartBtn = () => {
     startBtn.textContent = "재시작";
     mainImg.style.display = "none";
     footer.style.display = "flex";
+
     clickedImgBox.style.display = "block";
     unclickedImgBox.style.display = "block";
     loseImg.style.display = "none"
@@ -42,9 +43,13 @@ const handleStartBtn = () => {
     startBtn.textContent = "시작";
     mainImg.style.display = "block";
     footer.style.display = "none";
+
     unflippedArray = [];
     flippedArray = []; 
     count = 0;
+    goal = 8;
+    remainChoi.textContent = goal + " 명";
+    
     makeRandomImgs();
     for (const el of unclickedImgs) {
       el.style.visibility = "visible";
@@ -125,11 +130,13 @@ const handleUnclickedFlip = (event) => {
       flippedArray = [];
       goal = goal - 1
       remainChoi.textContent = goal + " 명";
+      if (goal === 0) {
+        winImg.style.display = "block"
+        clickedImgBox.style.display = "none";
+        unclickedImgBox.style.display = "none";
+      }
     }
   }
-
-  console.log(unflippedArray);
-  console.log(flippedArray);
 }
 
 startBtn.addEventListener("click", handleClick);
