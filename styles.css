@@ -53,10 +53,6 @@ main {
   height: auto;
 }
 
-/* .imgs_box_unclicked {
-  display: none;
-} */
-
 .img_lose, .img_win {
   display: none;
   width: 415px;
