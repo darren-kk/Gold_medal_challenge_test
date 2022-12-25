@@ -18,7 +18,7 @@ const randomImgsArray = [];
 let flippedArray = [];
 let unflippedArray = [];
 let sec = 25;
-let goal = 1;
+let goal = 8;
 let intervalId = undefined;
 let count = 0;
 
@@ -44,6 +44,9 @@ const handleStartBtn = () => {
     mainImg.style.display = "block";
     footer.style.display = "none";
 
+    loseImg.style.display = "none"
+    winImg.style.display = "none"
+
     unflippedArray = [];
     flippedArray = []; 
     count = 0;
@@ -63,6 +66,7 @@ const handleTimer = () => {
 
   if (sec < 0) {
     loseImg.style.display = "block"
+    winImg.style.display = "none";
     clickedImgBox.style.display = "none";
     unclickedImgBox.style.display = "none";
     clearInterval(intervalId);
